@@ -26,7 +26,7 @@ youtube_toolbox_server = MCPServerStdio(
         }
     },
     cache_tools_list=True,
-	  client_session_timeout_seconds=10,
+    client_session_timeout_seconds=10,
     tool_filter={
         "blocked_tool_names": ["get_video_transcript", "get_video_enhanced_transcript"]
     }
@@ -37,8 +37,8 @@ yt_content_strategy_agent = Agent(
     description="A specialized agent for developing YouTube content strategies, optimizing video, channel, and trend performance, and analyzing audience engagement to maximize channel growth.",
     instructions="./instructions.md",
     tools_folder="./tools",
-    tools=[WebSearchTool()],
-    model="gpt-5",
+    # tools=[WebSearchTool()],
+    model="litellm/anthropic/claude-sonnet-4-20250514",
     model_settings=ModelSettings(
         reasoning=Reasoning(
             effort="medium",
